@@ -38,15 +38,15 @@
         <link rel="stylesheet" href="\public\css\backend\bootstrap.css"/>
         <link rel="stylesheet" href="\public\css\backend\style.css"/> 
         <link rel="stylesheet" href="\public\css\backend\bootstrap-datepicker.min.css"/>
-        <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/themify-icons.css"/>
-        <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/bootstrap-datetimepicker.min.css"/>
+        <link rel="stylesheet" href="<?php echo e(asset('public/backEnd/')); ?>/vendors/css/themify-icons.css"/>
+        <link rel="stylesheet" href="<?php echo e(asset('public/backEnd/')); ?>/vendors/css/bootstrap-datetimepicker.min.css"/>
 
         
         <!-- End 31-07-2020-->
-        @stack('css')
+        <?php echo $__env->yieldPushContent('css'); ?>
     </head>
-    @include('frontEnd.modals_form.book_tour')
-    @include('frontEnd.modals_form.complaint')
+    <?php echo $__env->make('frontEnd.modals_form.book_tour', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('frontEnd.modals_form.complaint', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <body id="scroll-top">
 
         <!-- Preloader start here -->
@@ -72,21 +72,21 @@
 
             <div class="mobile-menu">
                 <ul class="m-menu">
-                    <li><a href="{{url('/')}}/home">Home</a></li>
+                    <li><a href="<?php echo e(url('/')); ?>/home">Home</a></li>
 
                     <li class="dropdown-submenu" >
-                        <a href="{{url('/')}}/about" data-toggle="dropdown">About</a>
+                        <a href="<?php echo e(url('/')); ?>/about" data-toggle="dropdown">About</a>
                         <ul class="mobile-submenu">
                             <li><a href="#">Our History</a></li>
                             <li><a href="#">Our Teachers</a></li>
                             <li><a href="#">Welcome from the Head of School</a></li>
                             <li><a href="#">Our Share Vision & Mission</a></li>
-                            <li><a href="{{url('/')}}/careers">Working at Saigon Star</a><li>
+                            <li><a href="<?php echo e(url('/')); ?>/careers">Working at Saigon Star</a><li>
                         </ul>
                     </li>
 
                     <li class="dropdown-submenu" data-toggle="dropdown">
-                        <a href="{{url('/')}}/course" data-toggle="dropdown">An International Curriculum</a>
+                        <a href="<?php echo e(url('/')); ?>/course" data-toggle="dropdown">An International Curriculum</a>
                         <ul class="mobile-submenu">
                             <li><a href="#">Early Years (age 2-5)</a></li>
                             <li><a href="#">Primary Years (age 5-11)</a></li>
@@ -108,7 +108,7 @@
                     </li>
             
                     <li class="dropdown-submenu">
-                        <a href="{{url('/')}}/news-page" data-toggle="dropdown">Bulletin</a>
+                        <a href="<?php echo e(url('/')); ?>/news-page" data-toggle="dropdown">Bulletin</a>
                         <ul class="mobile-submenu">
                             <li><a href="#">Summer Camp</a></li>
                             <li><a href="#">School Canteen</a></li>
@@ -120,10 +120,10 @@
                     </li>
           
                     <li class="dropdown-submenu">
-                        <a href="{{url('/')}}/admissions" data-toggle="dropdown">Admissions</a>
+                        <a href="<?php echo e(url('/')); ?>/admissions" data-toggle="dropdown">Admissions</a>
                         <ul class="mobile-submenu">
-                            <li><a href="{{url('/')}}/admissions">Admissions</a></li>
-                            <li><a href="{{url('/')}}/enrolment">Enrolment</a></li>
+                            <li><a href="<?php echo e(url('/')); ?>/admissions">Admissions</a></li>
+                            <li><a href="<?php echo e(url('/')); ?>/enrolment">Enrolment</a></li>
                             <li><a href="#">Fees & Tuition</a></li>
                             <li><a href="#">Ages, Grades, Availability</a></li>
                             <li><a href="#"  class="nav-link"  data-toggle="modal" data-target="#booktour" data-whatever="@mdo">Book a tour</a></li>
@@ -133,7 +133,7 @@
                         </ul>
                     </li>
           
-                    <li><a href="{{url('/')}}/contact">Contact</a></li>
+                    <li><a href="<?php echo e(url('/')); ?>/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -177,17 +177,17 @@
 
                                 <ul class="menu">
 
-                                    <li class="contact-header"><a href="{{url('/')}}/home">Home</a></li>
+                                    <li class="contact-header"><a href="<?php echo e(url('/')); ?>/home">Home</a></li>
 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/about" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                                        <a href="<?php echo e(url('/')); ?>/about" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Our History</a></li>
                                             <li><a href="/teachers">Our Teachers</a></li>
                                             <li><a href="/schedule/view">School timetable</a></li> <!--LONG-->
                                                     <li><a href="http://labartisan.net/demo/kidsacademy-rtl">Welcome form the Head of School</a></li>
                                             <li><a href="#">Our Shared Vision & Mission</a></li>
-                                            <li><a href="{{url('/')}}/careers">Working at Saigon Star</a><li>
+                                            <li><a href="<?php echo e(url('/')); ?>/careers">Working at Saigon Star</a><li>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Menu 2</a></li>
                                                     <li><a href="#">Menu 2</a></li>
@@ -213,7 +213,7 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/course" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">An International Curriculum<span class="caret"></span></a>
+                                        <a href="<?php echo e(url('/')); ?>/course" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">An International Curriculum<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Early Years (age 2-5)</a></li>
                                             <li><a href="#">Primary Years (age 5-11)</a></li>
@@ -225,7 +225,7 @@
                                     <li class="contact-header"><a href="#">Parents' Essentials</a></li>
 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
+                                        <a href="<?php echo e(url('/')); ?>/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Early Years (age 2-5)</a></li>
                                             <li><a href="#">Primary Years (age 5-11)</a></li>
@@ -235,11 +235,11 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/admissions" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Admissions<span class="caret"></span></a>
+                                        <a href="<?php echo e(url('/')); ?>/admissions" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Admissions<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Admissions Process</a></li>
-                                            <li><a href="{{url('/')}}/enrolment">Enrolment</a></li>
-                                            <li><a href="{{url('/')}}/admissions">Fees & Tuition</a></li>
+                                            <li><a href="<?php echo e(url('/')); ?>/enrolment">Enrolment</a></li>
+                                            <li><a href="<?php echo e(url('/')); ?>/admissions">Fees & Tuition</a></li>
                                             <li><a href="#">Ages, Grades, Availability</a></li>
                                             <li><a href="#"  class="nav-link"  data-toggle="modal" data-target="#booktour" data-whatever="@mdo">Book a tour</a></li>
                                             <li class="nav-item">
@@ -248,14 +248,14 @@
                                         </ul>
                                     </li> 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
+                                        <a href="<?php echo e(url('/')); ?>/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            @foreach($categories as $category)
-                                            <li><a href="{{url('/')}}/category/{{$category->id}}">{{$category->category_name}}</a></li>
-                                            @endforeach
+                                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li><a href="<?php echo e(url('/')); ?>/category/<?php echo e($category->id); ?>"><?php echo e($category->category_name); ?></a></li>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </ul>
                                     </li> 
-                                    <li class="contact-header"><a href="{{url('/')}}/contact">Contact</a></li>
+                                    <li class="contact-header"><a href="<?php echo e(url('/')); ?>/contact">Contact</a></li>
 
                                 </ul>
                                 <form class="menu-search-form">
@@ -270,12 +270,12 @@
         </header>
         <!-- header End here -->
 
-        @yield('main_content')
+        <?php echo $__env->yieldContent('main_content'); ?>
     
-        @yield('script')
+        <?php echo $__env->yieldContent('script'); ?>
 
         <!-- footer start here -->
-        @include('frontEnd.home.partials.footer')
+        <?php echo $__env->make('frontEnd.home.partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- footer end here -->
 
         <div class="action_footer">
@@ -316,12 +316,12 @@
         <script src="/public/js/custom.js"></script>
 
         <!-- 31-07-2020 -->
-        <!-- <script src="{{asset('public/backEnd/')}}/vendors/js/jquery-3.2.1.min.js"></script> -->
-        <script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap.min.js"></script>
-        <script src="{{asset('public/backEnd/')}}/vendors/js/moment.min.js"></script>
-        <script src="{{asset('public/backEnd/')}}/vendors/js/print/bootstrap-datetimepicker.min.js"></script>
-        <script src="{{asset('public/backEnd/')}}/vendors/js/bootstrap-datepicker.min.js"></script>
-        <script src="{{asset('public/backEnd/')}}/js/main.js"></script>
+        <!-- <script src="<?php echo e(asset('public/backEnd/')); ?>/vendors/js/jquery-3.2.1.min.js"></script> -->
+        <script src="<?php echo e(asset('public/backEnd/')); ?>/vendors/js/bootstrap.min.js"></script>
+        <script src="<?php echo e(asset('public/backEnd/')); ?>/vendors/js/moment.min.js"></script>
+        <script src="<?php echo e(asset('public/backEnd/')); ?>/vendors/js/print/bootstrap-datetimepicker.min.js"></script>
+        <script src="<?php echo e(asset('public/backEnd/')); ?>/vendors/js/bootstrap-datepicker.min.js"></script>
+        <script src="<?php echo e(asset('public/backEnd/')); ?>/js/main.js"></script>
 
         <!-- End 31-07-2020 -->
 
@@ -399,4 +399,4 @@ $(window).scroll( function(){
 </script>
 
     </body>
-</html>
+</html><?php /**PATH C:\wamp64\www\sgss\resources\views/frontEnd/home/layout/front_master.blade.php ENDPATH**/ ?>
