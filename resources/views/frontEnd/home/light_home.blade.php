@@ -178,8 +178,7 @@
 				<div class="col-lg-12">
 					<div id="carouselExampleControl" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
-							
-							{{-- @for ($i = 0; $i < count($photo); $i++) @if ($i==0) <div class="carousel-item active ">
+							@for ($i = 0; $i < count($photo); $i++) @if ($i==0) <div class="carousel-item active ">
 								@else
 								<div class="carousel-item">
 									@endif
@@ -189,7 +188,7 @@
 										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/{{$photo[($i + 1 + count($photo))%count($photo)]['path']}}" style="border-radius: 10px; object-fit: cover" alt=""></div>
 									</div>
 								</div>
-								@endfor --}}
+								@endfor
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleControl" role="button" data-slide="prev">
 							<span class="fa fa-chevron-left" style="color:#0c04e0;font-size:25px" aria-hidden="true"></span>

@@ -37,13 +37,13 @@ class SmCategoriesImagesController extends Controller
             'imgs'      => 'required|array',
             'imgs.*'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096'
         ]);
-
         try {
             DB::beginTransaction();
             $album = new SmCategoriesImagesAlbum();
             $album->title = $request->get('title');
             $album->save();
 
+            
             if (!File::exists(public_path('/uploads/category/'))) {
                 File::makeDirectory(public_path('/uploads/category/'));
             }

@@ -56,6 +56,7 @@ Use App\SmFeesNotes;
 Use \Carbon\Carbon;
 Use App\SmCareers; 
 Use File;
+Use App\SmParent;
 Use App\SmNewsSubCategory;
 Use App\SmNewsCategory;
 Use App\SmAcademicYear; // Long 31/08
@@ -132,7 +133,7 @@ class SmFrontendController extends Controller
                         return redirect('login');
                     } else {
                         if (!SmCategoriesImagesDefaultAlbum::first()) {
-                            $photo =[];
+                            $photo = [];
                         } else {
                             $photo = SmCategoriesImagesPhoto::where('album_id', SmCategoriesImagesDefaultAlbum::first()->album_id)->get();
                         }
@@ -151,7 +152,7 @@ class SmFrontendController extends Controller
 
                                 return view('saas::auth.saas_landing', compact('contact_info', 'packages'));
                             } else {
-                                return view('frontEnd.home.light_home', compact('exams', 'classes', 'subjects', 'exams_types', 'sections', 'news', 'testimonial', 'notice_board', 'events', 'academics', 'links', 'homePage', 'per'));
+                                return view('frontEnd.home.light_home', compact('exams', 'classes', 'subjects', 'exams_types', 'sections', 'news', 'testimonial', 'notice_board', 'events', 'academics', 'links', 'homePage', 'per', 'photo'));
                             }
                         } elseif ($url[max(array_keys($url))] == 'home') {
 
@@ -159,7 +160,7 @@ class SmFrontendController extends Controller
                                 $contact_info = SmContactPage::first();
                                 return view('saas::auth.saas_landing', compact('contact_info'));
                             } else {
-                                return view('frontEnd.home.light_home', compact('exams', 'classes', 'subjects', 'exams_types', 'sections', 'news', 'testimonial', 'notice_board', 'events', 'academics', 'links', 'homePage', 'per'));
+                                return view('frontEnd.home.light_home', compact('exams', 'classes', 'subjects', 'exams_types', 'sections', 'news', 'testimonial', 'notice_board', 'events', 'academics', 'links', 'homePage', 'per', 'photo'));
                             }
                         } else {
                             $url = $button_settings->website_url;
@@ -1185,8 +1186,7 @@ class SmFrontendController extends Controller
         ]);
 
         try {
-            Input::all();
-            Input::flash();
+            $request->flash();
             return redirect('enrolment/step_2');
         } catch (\Exception $e) {
             Toastr::error('Operation Failed', 'Failed');
@@ -1196,15 +1196,16 @@ class SmFrontendController extends Controller
 
     public function enrolment_2(Request $request)
     {
-        $input = Input::old();
+        $input = $request->old();
         if (!$input) {
             return redirect('enrolment');
         }
         $fees = FeesGroup::where("fees_group", $input["session"])->get();
-        $tuition_fees = Year::where("id_group", $input["session"])->get();
+        $tuition_fees = SmAcademicYear::where("id_group", $input["session"])->get();
         $classes = DB::table('sm_class_sections')->where('class_id', '=', $input['session'])
             ->join('sm_classes','sm_class_sections.class_id','=','sm_classes.id')
             ->get();
+        
         return view('frontEnd.home.light_enrolment_2', compact('fees', 'tuition_fees', 'classes'));
     }
 
@@ -1222,8 +1223,8 @@ class SmFrontendController extends Controller
                 session(['avt' => $file_name]);
             }
 
-            Input::all();
-            Input::flash();
+            $request->all();
+            $request->flash();
             return redirect("/enrolment/step_3");
         } catch (\Exception $e) {
             Toastr::error('Operation Failed', 'Failed');
@@ -1234,7 +1235,7 @@ class SmFrontendController extends Controller
     public function enrolment_3(Request $request)
     {
         try {
-            $input = Input::old();
+            $input = $request->old();
             if (!$input) {
                 return redirect('enrolment');
             }
@@ -1253,8 +1254,8 @@ class SmFrontendController extends Controller
             'method' => 'required'
         ]);
         try {
-            Input::all();
-            Input::flash();
+            $request->all();
+            $request->flash();
             return redirect("/enrolment/finished");
         } catch (\Exception $e) {
             Toastr::error('Operation Failed', 'Failed');
@@ -1264,8 +1265,8 @@ class SmFrontendController extends Controller
 
     public function enrolment_finished(Request $request)
     {
-        try {
-            $input = Input::old();
+        // try {
+            $input = $request->old();
             if (!$input) {
                 return redirect('enrolment');
             }
@@ -1323,19 +1324,19 @@ class SmFrontendController extends Controller
             
             $student->session_id = 1;
             $student->role_id = 1;
-
+            
             // avatar
             if ($input['avt']) {
-              $student->student_photo = "public/uploads/student/".session('avt');
+                $student->student_photo = "public/uploads/student/".session('avt');
             }
-
+            
             $student->save();
             
             return view('frontEnd.home.light_enrolment_finished', compact('student'));
-        } catch (\Exception $e) {
-            Toastr::error('Operation Failed', 'Failed');
-            return redirect()->back();
-        }
+        // } catch (\Exception $e) {
+        //     Toastr::error('Operation Failed', 'Failed');
+        //     return redirect()->back();
+        // }
     }
     /* Phạm Trọng hải*/
      public function admissions()

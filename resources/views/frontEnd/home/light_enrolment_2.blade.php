@@ -324,19 +324,19 @@
 														@foreach ($tuition_fees as $i)
 														<tr>
 															<td class="align-middle">
-																<h6>{{ $i->Name }}</h6>
+																<h6>{{ $i->title }}</h6>
 															</td>
 															<td class="align-middle">
-																<h6>{{ $i->paymentA }}</h6>
+																<h6>{{ $i->tuition_payment_A }}</h6>
 															</td>
 															<td class="align-middle">
-																<h6>{{ $i->paymentB1 }}</h6>
+																<h6>{{ $i->tuition_payment_B1 }}</h6>
 															</td>
 															<td class="align-middle">
-																<h6>{{ $i->paymentB2 }}</h6>
+																<h6>{{ $i->tuition_payment_B2 }}</h6>
 															</td>
 															<td class="align-middle">
-																<h6>{{ $i->paymentB3 }}</h6>
+																<h6>{{ $i->tuition_payment_B3 }}</h6>
 															</td>
 														</tr>
 														@endforeach
