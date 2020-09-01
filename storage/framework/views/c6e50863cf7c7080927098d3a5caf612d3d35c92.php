@@ -1,7 +1,7 @@
-@extends('frontEnd.home.layout.front_master')
-@section('main_content')
+
+<?php $__env->startSection('main_content'); ?>
   	<!-- Banner Start here -->
-	  @include('frontEnd.home.partials.banner')
+	  <?php echo $__env->make('frontEnd.home.partials.banner', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   	<!-- Banner End here -->
 
 
@@ -178,17 +178,17 @@
 				<div class="col-lg-12">
 					<div id="carouselExampleControl" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
-							@for ($i = 0; $i < count($photo); $i++) @if ($i==0) <div class="carousel-item active ">
-								@else
+							<?php for($i = 0; $i < count($photo); $i++): ?> <?php if($i==0): ?> <div class="carousel-item active ">
+								<?php else: ?>
 								<div class="carousel-item">
-									@endif
+									<?php endif; ?>
 									<div class="row">
-										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/{{$photo[($i - 1 + count($photo))%count($photo)]['path']}}" style="border-radius: 10px; object-fit: cover" alt=""></div>
-										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/{{$photo[($i + count($photo))%count($photo)]['path']}}" style="border-radius: 10px; object-fit: cover" alt=""></div>
-										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/{{$photo[($i + 1 + count($photo))%count($photo)]['path']}}" style="border-radius: 10px; object-fit: cover" alt=""></div>
+										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/<?php echo e($photo[($i - 1 + count($photo))%count($photo)]['path']); ?>" style="border-radius: 10px; object-fit: cover" alt=""></div>
+										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/<?php echo e($photo[($i + count($photo))%count($photo)]['path']); ?>" style="border-radius: 10px; object-fit: cover" alt=""></div>
+										<div class="col-sm-12 col-md-12 col-lg-4"><img class="d-block w-100" src="/public/uploads/category/<?php echo e($photo[($i + 1 + count($photo))%count($photo)]['path']); ?>" style="border-radius: 10px; object-fit: cover" alt=""></div>
 									</div>
 								</div>
-								@endfor
+								<?php endfor; ?>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleControl" role="button" data-slide="prev">
 							<span class="fa fa-chevron-left" style="color:#0c04e0;font-size:25px" aria-hidden="true"></span>
@@ -232,12 +232,13 @@
 	<!-- Explore End here -->
 
 
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
 <div class="box_maps">
 <iframe allowfullscreen="" frameborder="0" height="250px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.794845591907!2d106.76020697176476!3d10.76607169864385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525b6a19736e3%3A0x24fd5bbf12a59bc1!2sSaigon+Star+International+School!5e0!3m2!1sen!2s!4v1533871897065" style="border:0" width="100%"></iframe>
 </div>
 <div class="full left" style="text-align: center;">
 <a href="https://www.google.com/maps/place/Saigon+Star+International+School/@10.7596416,106.7616962,14.87z/data=!4m5!3m4!1s0x317525b6a19736e3:0x24fd5bbf12a59bc1!8m2!3d10.7663396!4d106.7610492" target="_blank" class="download">GET DIRECTIONS</a>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontEnd.home.layout.front_master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\PC\Desktop\sgss\t\sgss\resources\views/frontEnd/home/light_home.blade.php ENDPATH**/ ?>
