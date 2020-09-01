@@ -247,6 +247,14 @@
                                             </li>
                                         </ul>
                                     </li> 
+                                    <li class="dropdown">
+                                        <a href="{{url('/')}}/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            @foreach($categories as $category)
+                                            <li><a href="{{url('/')}}/category/{{$category->id}}">{{$category->category_name}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li> 
                                     <li class="contact-header"><a href="{{url('/')}}/contact">Contact</a></li>
 
                                 </ul>
