@@ -75,7 +75,6 @@ class ScheduleController extends Controller {
       $classes = Classes::get(["id", "class_name"]);
       $table = StaffSchedule::where("staff_id", $id)->get();
       $note = NoteSchedule::get();
-      return $note;
       $colors = ColorNoteSchedule::get();
 
 
