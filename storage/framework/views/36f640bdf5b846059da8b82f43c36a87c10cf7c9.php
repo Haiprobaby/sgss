@@ -247,6 +247,14 @@
                                             </li>
                                         </ul>
                                     </li> 
+                                    <li class="dropdown">
+                                        <a href="<?php echo e(url('/')); ?>/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">News<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li><a href="<?php echo e(url('/')); ?>/category/<?php echo e($category->id); ?>"><?php echo e($category->category_name); ?></a></li>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </ul>
+                                    </li> 
                                     <li class="contact-header"><a href="<?php echo e(url('/')); ?>/contact">Contact</a></li>
 
                                 </ul>
@@ -391,4 +399,5 @@ $(window).scroll( function(){
 </script>
 
     </body>
-</html><?php /**PATH /home/x/sgss/resources/views/frontEnd/home/layout/front_master.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH /home/x/sgss/resources/views/frontEnd/home/layout/front_master.blade.php ENDPATH**/ ?>
