@@ -35,12 +35,13 @@
         <!-- Bootstrap CSS -->
 
         <!--- 31-07-2020 --->
-        <link rel="stylesheet" href="\public\css\backend\bootstrap.css"/>
+        <link rel="stylesheet" href="\public\boostrap\boostrap.min.css"/> 
         <link rel="stylesheet" href="\public\css\backend\style.css"/> 
         <link rel="stylesheet" href="\public\css\backend\bootstrap-datepicker.min.css"/>
         <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/themify-icons.css"/>
         <link rel="stylesheet" href="{{asset('public/backEnd/')}}/vendors/css/bootstrap-datetimepicker.min.css"/>
-
+        <link rel="stylesheet" href="{{asset('public/frontEnd/')}}/css/TrongHai.css"/>
+        
         
         <!-- End 31-07-2020-->
         @stack('css')
@@ -96,7 +97,7 @@
                     </li>
 
                     <li class="dropdown-submenu">
-                        <a href="#" data-toggle="dropdown">Parents' Essentials</a>
+                        <a href="{{url('/')}}/parents" data-toggle="dropdown">Parents' Essentials</a>
                         <ul class="mobile-submenu">
                             <li><a href="#">Admissions Process</a></li>
                             <li><a href="#">Online Enrolment Form</a></li>
@@ -184,7 +185,6 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Our History</a></li>
                                             <li><a href="/teachers">Our Teachers</a></li>
-                                            <li><a href="/schedule/view">School timetable</a></li> <!--LONG-->
                                                     <li><a href="http://labartisan.net/demo/kidsacademy-rtl">Welcome form the Head of School</a></li>
                                             <li><a href="#">Our Shared Vision & Mission</a></li>
                                             <li><a href="{{url('/')}}/careers">Working at Saigon Star</a><li>
@@ -222,14 +222,16 @@
                                         </ul>
                                     </li>
                                     
-                                    <li class="contact-header"><a href="#">Parents' Essentials</a></li>
+                                    <li class="contact-header"><a href="{{url('/')}}/parents">Parents' Essentials</a></li>
 
                                     <li class="dropdown">
-                                        <a href="{{url('/')}}/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Early Years (age 2-5)</a></li>
-                                            <li><a href="#">Primary Years (age 5-11)</a></li>
-                                            <li><a href="#">Middle Years (age 11-14)</a></li>
+                                            
+                                            @foreach($bulletin as $bulletin)
+                                            <li><a href="{{url('/')}}/category-items/{{$bulletin->id}}">{{$bulletin->sub_category_name}}</a></li>
+                                            
+                                            @endforeach
                                             <!-- <li><a href="#">Pathways to University</a></li> -->
                                         </ul>
                                     </li>
@@ -255,6 +257,7 @@
                                             @endforeach
                                         </ul>
                                     </li> 
+
                                     <li class="contact-header"><a href="{{url('/')}}/contact">Contact</a></li>
 
                                 </ul>
@@ -272,7 +275,7 @@
 
         @yield('main_content')
     
-        @yield('script')
+        
 
         <!-- footer start here -->
         @include('frontEnd.home.partials.footer')
@@ -289,7 +292,7 @@
        
 
         <!-- jquery -->
-        <script src="/public/js/jquery-1.12.4.min.js"></script>
+        <script src="/public/js/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="/public/js/bootstrap.min.js"></script>
       
@@ -324,7 +327,7 @@
         <script src="{{asset('public/backEnd/')}}/js/main.js"></script>
 
         <!-- End 31-07-2020 -->
-
+        @yield('script')
         <script>
             var acc = document.getElementsByClassName("accordion");
             var i;
