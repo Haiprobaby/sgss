@@ -193,7 +193,6 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0;
 }
 h1{
-	color: #fff;
 	font-size: 36px;
 }
 h2{
@@ -372,13 +371,7 @@ table,th,td {
    /*border: 1px solid #d1d1d1;*/
 }
 table {
-   /* border-collapse: separate;
-    border-spacing: 0;
-    border-width: 1px 0 0 1px;
-    margin: 0 0 1.75em;
-    table-layout: fixed;
-    /* Prevents HTML tables from becoming too wide */
-   /* width: 100%;*/
+	
 }
 caption,th,td {
     font-weight: normal;
@@ -646,11 +639,11 @@ header .main-menu .navbar{
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
-.dropdown>a:focus, .dropdown>a:hover{
+.dropdown>a:focus, .dropdown>a:hover{s
     color: #16faef;
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
-    color: #16faef;
+    color: #000000;
 }
 .menu-area .menu>li>a:hover{
 	color: #16faef;
@@ -677,7 +670,7 @@ header .main-menu ul li ul li a{
     border-bottom: 1px solid #f0f0f0;
 }
 header .main-menu ul li ul li a:hover{
-    background-color: #fafafa
+    background-color: #95A9B1;
 }
 header .main-menu ul li ul li.active a{
     background-color: #fafafa
@@ -1078,6 +1071,28 @@ header .main-menu .menu_cart .check_out{
 .banner .banner-item .banner-content{
     padding: 250px 0px;
 }
+
+.banner .alt-banner {
+	height: 400px;
+	background-image: url(/public/images/banner/banner_alt.jpg); 
+	background-size: 100% 400px;
+}
+
+.banner .alt-banner .banner-content{
+	position: relative;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.banner .alt-banner .banner-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.2);
+}
+
 .banner .banner-item .banner-content h3{
     color: #fff;
     font-size: 36px;
@@ -1332,6 +1347,7 @@ header .main-menu .menu_cart .check_out{
     background-image: url(../../images/banner/banner_12.jpg);
 }
 
+
 /*  04  - Page Header
 ----------------------------------------------*/
 .page-header{
@@ -1366,7 +1382,7 @@ header .main-menu .menu_cart .check_out{
     color: #fff;
     text-decoration: none;
 }
-.scroll-top{
+.	{
     display: inline-block;
     height: 50px;
 	padding-right: 1px;
@@ -3830,8 +3846,8 @@ footer .footer-bottom p{
 }
 footer .footer-bottom .line {
 	border-top: 3px solid #fff;
-	width:400px;
-	margin-left:33%;
+	width:396px;
+	margin-left:32%;
 }
 footer .footer-bottom p a{
     color: #ee257c;
@@ -4021,7 +4037,7 @@ nav.main-menu-area {
     justify-content: space-between;
 }
 .logo-area {
-	margin-left:-20px;
+	margin-left:-70px;
     width: 188px;
 }
 .logo-area button {
@@ -4043,7 +4059,7 @@ nav.main-menu-area {
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row-reverse;
-    width: calc(100% - 188px);
+    width: 88%
 }
 ul.menu-search-cart {
     margin: 0;
@@ -4150,4 +4166,69 @@ a:visited {
 .academics-area {
 	padding-bottom: 100px;
 }
+.contact_area {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.map {
+	height: 700px;
+}
+.topnav {
+	overflow: hidden;
+	background-color: #e9ecef;
+	margin-top: 25px;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+.topnav a{
+	color: #008080;
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	padding: 14px 0 14px 0;
+}
+
+.academic-img img {
+  width: 100%;
+}
+
+.academics-area .container .row h1{
+	font-style: normal;
+}
+.early {
+	padding-bottom: 100px;
+	display: flex;
+}
+.early .content {
+	overflow-y: scroll;
+	height:250px;
+}
+.early .content::-webkit-scrollbar-thumb {
+  background: #93d9d9; 
+  border-radius: 10px;
+}
+.early .content::-webkit-scrollbar {
+  width: 7px;
+}
+.img-fluid {
+	width:50%;
+	padding-bottom:25px;
+}
+.enrolment-title{
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+.enrolment-title2{
+	text-align: center;
+	color:whitesmoke; 
+	font-size: 30px;"
+}
+.mr_30 {
+	margin-right: 30px;
+}
+.main-body {
+	padding-left: 20px;
+}
+
 
