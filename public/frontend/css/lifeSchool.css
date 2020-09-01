@@ -1,0 +1,418 @@
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(177, 176, 176); 
+    border-radius: 10px;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}   
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.images img{
+    border: 3px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.images img:hover {
+    border: 3px solid rgb(172, 60, 60);
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.paragraph{
+    width: 80%;
+    margin: auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+ .timeline {
+	 display: flex;
+	 margin: 0 auto;
+	 flex-wrap: wrap;
+	 flex-direction: column;
+	 max-width: 700px;
+	 position: relative;
+}
+ .timeline__content-title {
+	 font-weight: normal;
+	 font-size: 66px;
+	 margin: -10px 0 0 0;
+	 transition: 0.4s;
+	 padding: 0 10px;
+	 box-sizing: border-box;
+	 font-family: 'Pathway Gothic One', sans-serif;
+	 color: #fff;
+}
+ .timeline__content-desc {
+	 margin: 0;
+	 font-size: 15px;
+	 box-sizing: border-box;
+	 color: rgba(255, 255, 255, .7);
+	 font-family: Cardo;
+	 font-weight: normal;
+	 line-height: 25px;
+}
+ .timeline:before {
+	 position: absolute;
+	 left: 50%;
+	 width: 2px;
+	 height: 100%;
+	 margin-left: -1px;
+	 content: "";
+	 background: rgba(255, 255, 255, .07);
+}
+ @media only screen and (max-width: 767px) {
+	 .timeline:before {
+		 left: 40px;
+	}
+}
+ .timeline-item {
+	 padding: 40px 0;
+	 opacity: 0.3;
+	 filter: blur(2px);
+	 transition: 0.5s;
+	 box-sizing: border-box;
+	 width: calc(50% - 40px);
+	 display: flex;
+	 position: relative;
+	 transform: translateY(-80px);
+}
+ .timeline-item:before {
+	 content: attr(data-text);
+	 letter-spacing: 3px;
+	 width: 100%;
+	 position: absolute;
+	 color: rgba(255, 255, 255, .5);
+	 font-size: 13px;
+	 font-family: 'Pathway Gothic One', sans-serif;
+	 border-left: 2px solid rgba(255, 255, 255, .5);
+	 top: 70%;
+	 margin-top: -5px;
+	 padding-left: 15px;
+	 opacity: 0;
+	 right: calc(-100% - 56px);
+}
+ .timeline-item:nth-child(even) {
+	 align-self: flex-end;
+}
+ .timeline-item:nth-child(even):before {
+	 right: auto;
+	 text-align: right;
+	 left: calc(-100% - 56px);
+	 padding-left: 0;
+	 border-left: none;
+	 border-right: 2px solid rgba(255, 255, 255, .5);
+	 padding-right: 15px;
+}
+ .timeline-item--active {
+	 opacity: 1;
+	 transform: translateY(0);
+	 filter: blur(0px);
+}
+ .timeline-item--active:before {
+	 top: 50%;
+	 transition: 0.3s all 0.2s;
+	 opacity: 1;
+}
+ .timeline-item--active .timeline__content-title {
+	 margin: -50px 0 20px 0;
+}
+ @media only screen and (max-width: 767px) {
+	 .timeline-item {
+		 align-self: baseline !important;
+		 width: 100%;
+		 padding: 0 30px 150px 80px;
+	}
+	 .timeline-item:before {
+		 left: 10px !important;
+		 padding: 0 !important;
+		 top: 50px;
+		 text-align: center !important;
+		 width: 60px;
+		 border: none !important;
+	}
+	 .timeline-item:last-child {
+		 padding-bottom: 40px;
+	}
+}
+ .timeline__img {
+	 max-width: 100%;
+	 box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+}
+ .timeline-container {
+	 width: 100%;
+	 position: relative;
+	 padding: 80px 0;
+	 transition: 0.3s ease 0s;
+	 background-attachment: fixed;
+	 background-size: cover;
+}
+ .timeline-container:before {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 background: rgba(99, 99, 99, 0.8);
+	 content: "";
+}
+ .timeline-header {
+	 width: 100%;
+	 text-align: center;
+	 margin-bottom: 80px;
+	 position: relative;
+}
+ .timeline-header__title {
+	 color: #fff;
+	 font-size: 46px;
+	 font-family: Cardo;
+	 font-weight: normal;
+	 margin: 0;
+}
+ .timeline-header__subtitle {
+	 color: rgba(255, 255, 255, .5);
+	 font-family: 'Pathway Gothic One', sans-serif;
+	 font-size: 16px;
+	 letter-spacing: 5px;
+	 margin: 10px 0 0 0;
+	 font-weight: normal;
+}
+ .demo-footer {
+	 padding: 60px 0;
+	 text-align: center;
+}
+ .demo-footer a {
+	 color: #999;
+	 display: inline-block;
+	 font-family: Cardo;
+}
+ 
+
+.infomation-school{
+    border: 2px solid rgb(16, 114, 114);
+    width: 85%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+.infomation-school p{
+    color: rgb(16, 114, 114);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+.historysTitleImage{
+    border-top: 2px solid rgb(16, 114, 114);
+    width: 60%;
+    margin: auto;
+    margin-top: 50px; 
+    padding: 20px;
+    text-align: center;
+    color: rgb(16, 114, 114);
+    font-size: 30px;
+    font-weight: 600;
+}
+.overlayCategory {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    height: 101%;
+    width: 92%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #02222e63;
+    border-radius: 10px;
+}
+.nameOfCategory {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.viewMoreGallery{
+    background-color: rgba(16, 114, 114, 0.801) !important;
+    border: 0 !important;
+}
+.viewMoreGallery:hover{
+    background-color: rgb(7, 78, 78) !important;
+}
+.img-hover-zoom {
+    border-radius: 10px;
+    overflow: hidden; 
+}
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+.img-hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+.MsoTableGrid{
+    width: 100% !important;
+}
+
+@media (max-width: 3000px){
+    .carousel{
+        display: none;
+    }
+    .allImage{
+        height: auto;
+    }
+    .catePost img{
+        display: block;
+        margin: 15px auto;
+        width: 500px;
+    }
+    #bus{
+        display: block;
+        margin: 15px auto;
+        width: 900px;
+    }
+}
+
+.image{
+        display: block;
+        margin: 15px auto;
+        width: 500px;
+}
+@media (max-width: 729px){
+    .nameOfSchool{
+        font-size: 27px;
+    }
+    .infomation-school p{
+        font-size: 14px;
+    }
+    .academic-item{
+        width: 105%;
+    }
+    .overlayCategory{
+        width: 100%;
+    }
+    .academic-item{
+        width: 105%;
+    }
+    .overlayCategory{
+        width: 100%;
+    }
+}
+@media (max-width: 659px){
+    .image{
+        width: 90%;
+    }
+    .paragraph{
+        width: 93%;
+        margin: auto;
+    }
+    .carousel{
+        display: block;
+    }
+    .allImage{
+        display: none;
+    }
+    .catePost img{
+        width: 100%;
+    }
+    #bus{
+        display: block;
+        margin: 15px auto;
+        width: 100%;
+    }
+    .paragraph{
+        width: 96%;
+        margin: auto;
+    }
+    .bg{
+        display: none;
+    }
+}
+@media (max-width: 550px){
+    .nameOfSchool{
+        font-size: 20px;
+    }
+    .infomation-school p{
+        font-size: 12px;
+    }
+    .timeline-header__title{
+        font-size: 28px; 
+    }
+    .academic-item{
+        width: 107%;
+    }
+    .historysTitleImage{
+        width: 93%;
+    }
+    .timeline-header__title{
+        font-size: 28px; 
+    }
+    .academic-item{
+        width: 107%;
+    }
+    .historysTitleImage{
+        width: 93%;
+    }
+}
+@media (max-width: 430px){
+    .title{
+        font-size: 28px;
+    }
+}
+@media (max-width: 413px){
+    .nameOfSchool{
+        font-size: 17px;
+    }
+    .infomation-school p{
+        font-size: 11px;
+    }
+    .academic-item{
+        width: 109%;
+    }
+    .academic-item{
+        width: 109%;
+    }
+}
+@media (max-width: 353px){
+    .academic-item{
+        width: 112%;
+    }
+    .historysTitleImage{
+        font-size: 24px; 
+    }
+    .title{
+        font-size: 25px;
+    }
+    .nameOfSchool{
+        font-size: 15px;
+    }
+    .infomation-school p{
+        font-size: 10px;
+    }
+    .timeline-header__title{
+        font-size: 20px; 
+    }
+    .academic-item{
+        width: 112%;
+    }
+    .historysTitleImage{
+        font-size: 24px; 
+    }
+}
