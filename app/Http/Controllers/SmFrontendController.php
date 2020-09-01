@@ -1265,7 +1265,7 @@ class SmFrontendController extends Controller
 
     public function enrolment_finished(Request $request)
     {
-        try {
+        // try {
             $input = $request->old();
             if (!$input) {
                 return redirect('enrolment');
@@ -1324,19 +1324,19 @@ class SmFrontendController extends Controller
             
             $student->session_id = 1;
             $student->role_id = 1;
-
+            
             // avatar
             if ($input['avt']) {
-              $student->student_photo = "public/uploads/student/".session('avt');
+                $student->student_photo = "public/uploads/student/".session('avt');
             }
-
+            
             $student->save();
             
             return view('frontEnd.home.light_enrolment_finished', compact('student'));
-        } catch (\Exception $e) {
-            Toastr::error('Operation Failed', 'Failed');
-            return redirect()->back();
-        }
+        // } catch (\Exception $e) {
+        //     Toastr::error('Operation Failed', 'Failed');
+        //     return redirect()->back();
+        // }
     }
     /* Phạm Trọng hải*/
      public function admissions()
@@ -1389,9 +1389,9 @@ class SmFrontendController extends Controller
         try{
             $careers = SmCareers::all();
             return view('frontEnd.careers', compact('careers'));
-        }catch (\Exception $e) {
-            Toastr::error('Operation Failed', 'Failed');
-            return redirect()->back(); 
+         }catch (\Exception $e) {
+             Toastr::error('Operation Failed', 'Failed');
+             return redirect()->back(); 
         }
     }
 
@@ -1431,7 +1431,7 @@ class SmFrontendController extends Controller
                 $email = $setting->email;
                 $school_name = $setting->school_name;
                 $message->from('haiprobaby1998@gmail.com', $school_name);
-                $message->to('haiprobaby1998@gmail.com', $school_name)->subject('Job Application');
+                $message->to('lvgiang1122@gmail.com', $school_name)->subject('Job Application');
                 
             });
 
