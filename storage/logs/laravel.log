@@ -15810,3 +15810,4 @@ ews_page.blade.php) at C:\\wamp64\\www\\SGSS\esources\\views/backEnd/news/news_
 #60 C:\\wamp64\\www\\SGSS\\index.php(54): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #61 {main}
 "} 
+[2020-09-01 07:59:56] local.INFO: cURL error 6: Could not resolve host: salespanel.infixedu.com (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)  
