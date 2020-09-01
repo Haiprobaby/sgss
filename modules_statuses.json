@@ -9,5 +9,6 @@
     "Zoom": false,
     "ParentRegistration": false,
     "SaasSubscription": false,
-    "Inventory": false
+    "Inventory": false,
+    "Schedule": true
 }
