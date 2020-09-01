@@ -35,7 +35,7 @@
 			  </thead>
 			  <tbody>
 			  	
-			  	@foreach($early->years as $years)
+			  	@foreach($early as $years)
 			    <tr>
 			      <th scope="row">{{$years->title}}</th>
 			      <td>{{number_format($years->tuition_payment_A)}}</td>
@@ -69,7 +69,7 @@
 			  </thead>
 			  <tbody>
 			  	
-			  	@foreach($early->fees as $fees)
+			  	@foreach($early_fees as $fees)
 			    <tr >
 			      <th scope="row">{{$fees->Name}}</th>
 			      <td>{{$fees->description}}</td>
@@ -110,7 +110,7 @@
 		  </thead>
 		  <tbody>
 		  	
-		  	@foreach($primary->years as $years)
+		  	@foreach($primary as $years)
 		    <tr>
 		       	  <th scope="row">{{$years->title}}</th>
 			      <td>{{number_format($years->tuition_payment_A)}}</td>
@@ -144,7 +144,7 @@
 			  </thead>
 			  <tbody>
 			  	
-			  	@foreach($primary->fees as $fees)
+			  	@foreach($primary_fees as $fees)
 			    <tr >
 			      <th scope="row">{{$fees->Name}}</th>
 			      <td>{{$fees->description}}</td>
@@ -183,7 +183,7 @@
 		  </thead>
 		  <tbody>
 		  	
-		  	@foreach($middle->years as $years)
+		  	@foreach($middle as $years)
 		    <tr>
 		          <th scope="row">{{$years->title}}</th>
 			      <td>{{number_format($years->tuition_payment_A)}}</td>
@@ -217,7 +217,7 @@
 			  </thead>
 			  <tbody>
 			  	
-			  	@foreach($middle->fees as $fees)
+			  	@foreach($middle_fees as $fees)
 			    <tr >
 			      <th scope="row">{{$fees->Name}}</th>
 			      <td>{{$fees->description}}</td>

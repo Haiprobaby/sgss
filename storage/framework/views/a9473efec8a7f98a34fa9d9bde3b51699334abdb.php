@@ -35,12 +35,13 @@
         <!-- Bootstrap CSS -->
 
         <!--- 31-07-2020 --->
-        <link rel="stylesheet" href="\public\css\backend\bootstrap.css"/>
+        <link rel="stylesheet" href="\public\boostrap\boostrap.min.css"/> 
         <link rel="stylesheet" href="\public\css\backend\style.css"/> 
         <link rel="stylesheet" href="\public\css\backend\bootstrap-datepicker.min.css"/>
         <link rel="stylesheet" href="<?php echo e(asset('public/backEnd/')); ?>/vendors/css/themify-icons.css"/>
         <link rel="stylesheet" href="<?php echo e(asset('public/backEnd/')); ?>/vendors/css/bootstrap-datetimepicker.min.css"/>
-
+        <link rel="stylesheet" href="<?php echo e(asset('public/frontEnd/')); ?>/css/TrongHai.css"/>
+        
         
         <!-- End 31-07-2020-->
         <?php echo $__env->yieldPushContent('css'); ?>
@@ -96,7 +97,7 @@
                     </li>
 
                     <li class="dropdown-submenu">
-                        <a href="#" data-toggle="dropdown">Parents' Essentials</a>
+                        <a href="<?php echo e(url('/')); ?>/parents" data-toggle="dropdown">Parents' Essentials</a>
                         <ul class="mobile-submenu">
                             <li><a href="#">Admissions Process</a></li>
                             <li><a href="#">Online Enrolment Form</a></li>
@@ -184,7 +185,6 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Our History</a></li>
                                             <li><a href="/teachers">Our Teachers</a></li>
-                                            <li><a href="/schedule/view">School timetable</a></li> <!--LONG-->
                                                     <li><a href="http://labartisan.net/demo/kidsacademy-rtl">Welcome form the Head of School</a></li>
                                             <li><a href="#">Our Shared Vision & Mission</a></li>
                                             <li><a href="<?php echo e(url('/')); ?>/careers">Working at Saigon Star</a><li>
@@ -222,14 +222,16 @@
                                         </ul>
                                     </li>
                                     
-                                    <li class="contact-header"><a href="#">Parents' Essentials</a></li>
+                                    <li class="contact-header"><a href="<?php echo e(url('/')); ?>/parents">Parents' Essentials</a></li>
 
                                     <li class="dropdown">
-                                        <a href="<?php echo e(url('/')); ?>/news-page" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Bulletin<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Early Years (age 2-5)</a></li>
-                                            <li><a href="#">Primary Years (age 5-11)</a></li>
-                                            <li><a href="#">Middle Years (age 11-14)</a></li>
+                                            
+                                            <?php $__currentLoopData = $bulletin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bulletin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li><a href="<?php echo e(url('/')); ?>/category-items/<?php echo e($bulletin->id); ?>"><?php echo e($bulletin->sub_category_name); ?></a></li>
+                                            
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             <!-- <li><a href="#">Pathways to University</a></li> -->
                                         </ul>
                                     </li>
@@ -255,6 +257,7 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </ul>
                                     </li> 
+
                                     <li class="contact-header"><a href="<?php echo e(url('/')); ?>/contact">Contact</a></li>
 
                                 </ul>
@@ -272,7 +275,7 @@
 
         <?php echo $__env->yieldContent('main_content'); ?>
     
-        <?php echo $__env->yieldContent('script'); ?>
+        
 
         <!-- footer start here -->
         <?php echo $__env->make('frontEnd.home.partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -289,7 +292,7 @@
        
 
         <!-- jquery -->
-        <script src="/public/js/jquery-1.12.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="/public/js/bootstrap.min.js"></script>
       
@@ -324,7 +327,7 @@
         <script src="<?php echo e(asset('public/backEnd/')); ?>/js/main.js"></script>
 
         <!-- End 31-07-2020 -->
-
+        <?php echo $__env->yieldContent('script'); ?>
         <script>
             var acc = document.getElementsByClassName("accordion");
             var i;

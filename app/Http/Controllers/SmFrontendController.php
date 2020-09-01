@@ -1342,9 +1342,14 @@ class SmFrontendController extends Controller
      public function admissions()
     {
           ///lấy danh sách các group 
-        $early= SmFeesGroup::find(1);
-        $primary = SmFeesGroup::find(2);
-        $middle=SmFeesGroup::find(3);
+        $early= SmAcademicYear::where('id_group',1)->get();
+        $primary = SmAcademicYear::where('id_group',2)->get();
+        $middle=SmAcademicYear::where('id_group',3)->get();
+
+        $early_fees=sm_fees::where('fees_group',1)->get();
+        $primary_fees=sm_fees::where('fees_group',2)->get();
+        $middle_fees=sm_fees::where('fees_group',3)->get();
+
         $withdraw=withdraw::all();
         $bus = smroute::all(); //lấy tất cả phí xe buýt
         $discount=SmFeesDiscount::where('type',null)->get(); //lấy tất cả discount
@@ -1379,7 +1384,7 @@ class SmFrontendController extends Controller
         
 
         
-        return view('frontEnd.home.admissions',compact('notes','early','primary','middle','bus','discount','late_enrolment','withdraw','list','schoolyears')); //gửi danh sách vè view 
+        return view('frontEnd.home.admissions',compact('notes','early','primary','middle','bus','discount','late_enrolment','withdraw','list','schoolyears','early_fees','primary_fees','middle_fees')); //gửi danh sách vè view 
     }
     /* Phạm Trọng hải   */
     /* Phạm Trọng hải   */
