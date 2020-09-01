@@ -18,7 +18,7 @@ class CareerController extends Controller
     public function index(Request $request)
     {
         
-        try{
+        //try{
             $careers = SmCareers::all();
 
             if (ApiBaseMethod::checkUrl($request->fullUrl())) {
@@ -26,10 +26,10 @@ class CareerController extends Controller
             }
     
             return view('backEnd.humanResource.careers.index', compact('careers'));
-        }catch (\Exception $e) {
-           Toastr::error('Operation Failed', 'Failed');
-           return redirect()->back(); 
-        }
+        //}catch (\Exception $e) {
+        //   Toastr::error('Operation Failed', 'Failed');
+         //  return redirect()->back(); 
+        //}
     }
 
     public function edit(Request $request, $id)
