@@ -90,7 +90,7 @@
                                         </span>
                                         <?php endif; ?> 
                                         
-                                        <div id="student_info">
+                                        <div id="student_info" style="display: none;">
                                         <p>
                                         <a href="" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                         <i class="fa fa-plus"></i>
