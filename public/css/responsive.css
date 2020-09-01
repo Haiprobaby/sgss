@@ -110,6 +110,16 @@
 	}
 }
 @media only screen and (max-width: 991px)  and (min-width: 768px) {
+	
+	.logo-area {
+	display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+	align-items: center;
+	}
+	.logo-area img{
+		max-width:60%;
+	}
 	header .main-menu .navbar-header{
 		width: 100%;
 		height: 50px;
@@ -122,8 +132,12 @@
 		margin: 0 auto;
 	}
 	.menu-area {
-		width: 100%;
+		display: none;
 	}
+	.mobile-menu-area {
+		display: block;
+	}
+	
 	.navbar-nav{
 		float: left!important;
 	}
@@ -254,7 +268,7 @@
 		display: none;
 	}
 	footer .footer-item{
-		margin-bottom: 50px;
+		margin-bottom: 0px;
 	}
 	.product .product-item-grid {
 	    width: 45.2%;
@@ -503,81 +517,79 @@
 	}
 }
 @media only screen and (max-width: 480px) {
-	.section-header h3{
-		font-size: 26px;
-	}
-	.page-header h3{
-		font-size: 30px;
-	}
-	.page-header ul li{
-		font-size: 18px;
-	}
-	.banner .item .banner-content{
-	    padding: 100px 0px;
-	}
-	.banner .item .banner-content h3{
-		font-size: 24px;
-	}
-	.banner .item .banner-content h2{
-		font-size: 30px;
-	}
-	.about .about-content h3{
-		font-size: 26px;
-	}
-	.event-single .event-counter{
-		position: static;
-	}
-	.event-single .event-counter h4{
-		font-size: 20px;
-	}
-	.event-single .event-counter .clock-item{
-		margin-right: 10px;
-	}
-	.single-post .post-comments li ul{
-		margin-left: 20px;
-	}
-	.product .product-item-grid .icon:nth-child(3){
-		left: 25%;
-	}
-	.product .product-item-grid .icon:nth-child(6){
-		right: 25%;
-	}
-	.pro-details .details h3, .pro-details .details span{
-		font-size: 26px;
-	}
-	.pro-details .details select{
-		padding: 8px 20px;
-		margin-right: 0px;
-	}
-	.pro-description .nav-tabs>li>a{
-		margin-right: 20px;
-	}
-	.pro-description .review-item .image {
-	    height: 60px;
-	    width: 60px;
-	    margin-right: 10px;
-	}
-	.pagination li{
-		margin-right: -2px;
-	}
-	.subscribe h3{
-		font-size: 30px;
-	}
-	.subscribe form input:first-child{
-		width: 100%;
-		margin-bottom: 10px;
-	}
-	.subscribe form input:last-child{
-		margin: 0px;
-	}
-	
+.section-header h3{
+	font-size: 26px;
 }
-@media only screen and (max-width: 480px) {
+.page-header h3{
+	font-size: 30px;
+}
+.page-header ul li{
+	font-size: 18px;
+}
+.banner .item .banner-content{
+	padding: 100px 0px;
+}
+.banner .item .banner-content h3{
+	font-size: 24px;
+}
+.banner .item .banner-content h2{
+	font-size: 30px;
+}
+.about .about-content h3{
+	font-size: 26px;
+}
+.event-single .event-counter{
+	position: static;
+}
+.event-single .event-counter h4{
+	font-size: 20px;
+}
+.event-single .event-counter .clock-item{
+	margin-right: 10px;
+}
+.single-post .post-comments li ul{
+	margin-left: 20px;
+}
+.product .product-item-grid .icon:nth-child(3){
+	left: 25%;
+}
+.product .product-item-grid .icon:nth-child(6){
+	right: 25%;
+}
+.pro-details .details h3, .pro-details .details span{
+	font-size: 26px;
+}
+.pro-details .details select{
+	padding: 8px 20px;
+	margin-right: 0px;
+}
+.pro-description .nav-tabs>li>a{
+	margin-right: 20px;
+}
+.pro-description .review-item .image {
+	height: 60px;
+	width: 60px;
+	margin-right: 10px;
+}
+.pagination li{
+	margin-right: -2px;
+}
+.subscribe h3{
+	font-size: 30px;
+}
+.subscribe form input:first-child{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.subscribe form input:last-child{
+	margin: 0px;
+}
+	
 .logo-area {
 	display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-between;
-align-items: center;
+	margin-left: -20px;
+	justify-content: space-between;
+	align-items: center;
 }
 .logo-area img{
 	max-width:70%;
@@ -613,9 +625,26 @@ align-items: center;
 	font-size: 10px;
 }
 .banner{
-    position: auto;
+	position: auto;
 	
 }
+
+.gallery .container .carousel-inner {
+	margin-left: 10px;
+}
+
+.banner .alt-banner {
+	height: 158px;
+	background-size: 100% 158px;
+}
+
+.banner .alt-banner .banner-overlay{
+	display: none;
+}
+.banner .alt-banner .banner-content{
+	display: none;
+}
+
 .banner-slider.swiper-container{
 	height:158px;
 }
@@ -624,16 +653,16 @@ align-items: center;
 	height:158px;
 }
 .banner .banner-item img{
-    width: 100%;
+	width: 100%;
 	height: 25px;
 	
 }
 .banner .banner-item{
 	class="img-responsive";
-    
-    background-size: 100% 158px;
-    background-position:  center; 
-    position: relative;
+	
+	background-size: 100% 158px;
+	background-position:  center; 
+	position: relative;
 }
 .banner .banner-item .book_tour{
 	display: none;
@@ -656,37 +685,92 @@ align-items: center;
 	font-size: 12px;
 }
 .banner .banner-item .content .customer img {
-    padding-top: 0px;
-    width: 25px;
-    margin-right: 10px;
-    border-radius: 100%;
+	padding-top: 0px;
+	width: 25px;
+	margin-right: 10px;
+	border-radius: 100%;
 }
 .banner .banner-item .content .customer div{
 	font-size: 7px;
 }
 .row{
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
 
 }
-.academics-area {
+
+.topnav{
+	margin-right: -30px;
+}
+.topnav a{
+	font-size:17px;
+}
+.overview-area .topnav{
+	margin-right: 0px;
+}
+.overview-area .img
+.card-body .early .topnav{
+	margin-right: 0px;
+}
+#accordion {
+	margin-right: -30px;
+}
+
+
+#accordion_admission {
+	width: 96%;
+	float: right;
+	text-align: center;
+}
+#accordion_admission table{
+	margin-left: -18px;
+}
+table {
+	font-size: 10px;
+}
+
+.early {
+	display: block;
+}
+
+.img-fluid{
+	width: 100%;
+}
+
+.academics-area{
 	padding-bottom: 50px;
 }
+.academics-area .img-fluid-two{
+	width: 88%;
+}
+.academics-area .row h3{
+	font-size: 24px;
+}
+
+.academic-item{
+	margin-right: -45px;
+}
+
+
+.news-item {
+	margin-right: -30px;
+}
+
 .gallery .container .row{
 	max-height: 267px;
 	margin-bottom: 0px;
 }
 .col-lg-3.col-sm-6.col-xs-12{
 	position: relative;
-    width: 20%;
-    padding-right: 15px;
+	width: 20%;
+	padding-right: 15px;
 	margin-right:15px;
-    padding-left: 15px;
+	padding-left: 15px;
 }
 .padding-120{
-    padding: 10px 0px;
+	padding: 10px 0px;
 }
 .facility .facility-item h4{
 	padding-left: 10px;
@@ -697,29 +781,29 @@ h4{
 .facility .facility-item .icon {
 	
 	background-color: #e84b3a;
-    height: 82.5px;
-    width: 82.5px;
-    border-radius: 100%;
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 20px;
+	height: 82.5px;
+	width: 82.5px;
+	border-radius: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 20px;
 	
 	
 }
 .section-header{
 	padding-top: 15px;
-    margin-left: 0px;
+	margin-left: 0px;
 }
 .section-header h3{
-    font-size: 24px;
+	font-size: 24px;
 }
 .section-header p{
 	font-size: 11px;
 }
 
 .about .img-video {
-    width: 100%;
-    height: 250px;
+	width: 100%;
+	height: 250px;
 }
 footer .footer-top{
 	padding-top: 10px;
@@ -747,8 +831,28 @@ footer .footer-top .row{
 	width: 110px;
 	font-size: 13px;
 }
-
+.white-box{
+	margin-right: -50px;
+	margin-left: -30px;
 }
+.mr_30{
+	margin-right: 0px;
+}
+.enrolment-title{
+	font-size: 25px;
+}
+.enrolment-title2{
+	font-size: 18px;
+}
+.white-box h5{
+	font-size: 7px;
+}
+.main-body {
+	padding-left: 20px;
+}
+
+}  
+/* ============ IPAD Pro ================ */
 @media only screen and (max-width: 1199px) and (min-width:992px) {
 header .header-top .left{
 	margin-left:50px;
@@ -769,6 +873,16 @@ header .header-top .right{
     flex-wrap: wrap;
     align-items: left;
     flex-direction: row-reverse;
+}
+.about-two .explore_us a {
+	width: 450px;
+}
+.gallery .container .carousel-inner {
+	margin-left: 0px;
+}
+
+.carousel-inner {
+	width: 100%;
 }
 .contact-header {
 	display:none;
@@ -802,7 +916,12 @@ header .header-top .right .up{
 }
 footer .footer-bottom .line {
 	
-	margin-left:29%;
+	margin-left:28%;
+}
+
+#bt_open {
+	transform: rotate(0deg);
+	bottom: 23px;	
 }
 
 }
@@ -812,27 +931,35 @@ footer .footer-bottom .line {
 	
 }
 .banner-slider.swiper-container{
-	height:448px;
+	height:320px;
 }
 .banner-slider{
 	width:100%;
-	height:448px;
+	
 }
 .banner .banner-item img{
     width: 100%;
-	height:448px;
-	
 }
 .banner .banner-item{
-	class="img-responsive";
-    background-image: url(../../images/banner/banner_01.jpg);
-    background-size: 100% 448px;
+	
+    background-size: 100% 320px;
     background-position:  center; 
     position: relative;
 }
-.img-video{
-	width:710px;
-	height:360px;
+.banner .banner-content {
+	display: none;
 }
-	
+.about-two .explore_us {
+	padding-left: 40px;
+	padding-top: 50px;
+}
+.gallery .container .row{
+	max-height: 508px;
+	margin-bottom: 0px;
+}
+#bt_open{
+	transform: rotate(0deg);
+	bottom: 18px;
+}
+
 }

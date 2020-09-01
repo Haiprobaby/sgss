@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="col-lg-6 col-xl-4">
 					<div class="about-content">
-						<h3>Our Missions<<</h3>
+						<h3>Our Mission</h3>
 						<h4>We adopt a special look on education</h4>
 						<p>I would like to extend a heartfelt and sincere welcome to Saigon Star International School; a boutique international school with a real sense of family at its heart. Having been here for five fantastic years, I feel incredibly proud of the journey we have been on together; with every single member of our community contributing to our growth, development and improvement, establishing us as a diverse, inclusive and welcoming school that is fully focussed on learning and enrichment.</p>
 
