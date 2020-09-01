@@ -1388,9 +1388,9 @@ class SmFrontendController extends Controller
         try{
             $careers = SmCareers::all();
             return view('frontEnd.careers', compact('careers'));
-        }catch (\Exception $e) {
-            Toastr::error('Operation Failed', 'Failed');
-            return redirect()->back(); 
+         }catch (\Exception $e) {
+             Toastr::error('Operation Failed', 'Failed');
+             return redirect()->back(); 
         }
     }
 
@@ -1430,7 +1430,7 @@ class SmFrontendController extends Controller
                 $email = $setting->email;
                 $school_name = $setting->school_name;
                 $message->from('haiprobaby1998@gmail.com', $school_name);
-                $message->to('haiprobaby1998@gmail.com', $school_name)->subject('Job Application');
+                $message->to('lvgiang1122@gmail.com', $school_name)->subject('Job Application');
                 
             });
 
