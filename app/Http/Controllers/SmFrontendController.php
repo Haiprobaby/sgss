@@ -45,7 +45,7 @@ use App\sm_fees;
 use App\Form1;
 use App\SmPaymentMethhod;
 use Dotenv\Validator;
-use App\smroute;
+use App\SmRoute;
 use App\SmFeesDiscount;
 use App\late_enrolment;
 use App\school_grades;
@@ -1350,7 +1350,7 @@ class SmFrontendController extends Controller
         $middle_fees=sm_fees::where('fees_group',3)->get();
 
         $withdraw=withdraw::all();
-        $bus = smroute::all(); //lấy tất cả phí xe buýt
+        $bus = SmRoute::all(); //lấy tất cả phí xe buýt
         $discount=SmFeesDiscount::where('type',null)->get(); //lấy tất cả discount
         $late_enrolment=late_enrolment::all(); //lấy tất cả phí ghi danh muộn
         $notes=SmFeesNotes::all();
