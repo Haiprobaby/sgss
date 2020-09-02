@@ -147,10 +147,8 @@
 
                             <div class="col-lg-2">
                                 <div class="input-effect">
-                                    <input class="primary-input  form-control{{ $errors->has('admission_number') ? ' is-invalid' : '' }}" type="text" onkeyup="GetAdmin(this.value)" name="admission_number"
-                                     value="{{$max_admission_id != ''? $max_admission_id + 1 : 1}}" >
-
-                                   <label>@lang('lang.admission') @lang('lang.number')</label>
+                                    <input class="primary-input  form-control{{ $errors->has('admission_number') ? ' is-invalid' : '' }}" type="text" onkeyup="GetAdmin(this.value)" name="admission_number" value="{{$max_admission_id}}" > <!---2708_Long -->
+                                    <label>@lang('lang.admission') @lang('lang.number')</label>
                                     <span class="focus-border"></span>
                                     <span class="invalid-feedback" id="Admission_Number" role="alert">
                                     </span>

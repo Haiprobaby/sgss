@@ -131,8 +131,8 @@ class SmStudentAdmissionController extends Controller
                 }
             }
 
-
-            $max_admission_id = SmStudent::where('school_id', Auth::user()->school_id)->max('admission_no');
+            $max_id = SmStudent::where('school_id', Auth::user()->school_id)->max('id');
+            $max_admission_id = 'sgstar'.str_pad($max_id + 1, 3, '0', STR_PAD_LEFT); // 2708_Long
             $max_roll_id = SmStudent::where('school_id', Auth::user()->school_id)->max('roll_no');
 
             $classes = SmClass::where('active_status', '=', '1')->where('academic_id', YearCheck::getAcademicId())->where('school_id', Auth::user()->school_id)->get();
